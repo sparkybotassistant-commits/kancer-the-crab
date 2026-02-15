@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.createElement('div');
     mobileMenu.className = 'mobile-menu';
     mobileMenu.innerHTML = `
-        <button class="mobile-menu-close" aria-label="Close menu">✕</button>
+        <button class="mobile-menu-close" aria-label="Close menu">×</button>
         <a href="#services" class="mobile-nav-link">Services</a>
-        <a href="#process" class="mobile-nav-link">Process</a>
         <a href="#work" class="mobile-nav-link">Work</a>
+        <a href="#process" class="mobile-nav-link">Process</a>
         <a href="#contact" class="mobile-nav-link">Contact</a>
     `;
     body.appendChild(mobileMenu);
@@ -48,27 +48,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===== Header Scroll Effect =====
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('.header');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
         
-        // Add shadow on scroll
-        if (currentScroll > 50) {
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        if (currentScroll > 100) {
+            header.style.borderColor = 'rgba(196, 18, 48, 0.3)';
         } else {
-            header.style.boxShadow = 'none';
+            header.style.borderColor = 'var(--border)';
         }
-        
-        lastScroll = currentScroll;
     }, { passive: true });
 });
 
-// ===== Scroll Animations =====
+// ===== Scroll Animations (Snappy) =====
 document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -10% 0px',
         threshold: 0.1
     };
     
@@ -81,18 +77,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Add fade-in class to elements and observe them
+    // Observe section containers
     const sections = document.querySelectorAll('section > .container');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
     });
     
-    const cards = document.querySelectorAll('.service-card, .work-item, .trust-item, .testimonial-card');
-    cards.forEach((card, index) => {
+    // Observe cards
+    const cards = document.querySelectorAll('.service-card, .trust-item, .step');
+    cards.forEach((card) => {
         card.classList.add('fade-in');
-        card.style.transitionDelay = `${index * 0.1}s`;
         observer.observe(card);
+    });
+    
+    // Observe work links
+    const workLinks = document.querySelectorAll('.work-link');
+    workLinks.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(20px)';
+        link.style.transition = `opacity 0.4s ease ${index * 0.1}s, transform 0.4s ease ${index * 0.1}s`;
+        
+        const linkObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    linkObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        linkObserver.observe(link);
     });
 });
 
@@ -103,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const business = document.getElementById('business').value;
@@ -119,12 +134,12 @@ document.addEventListener('DOMContentLoaded', function() {
         emailBody += `%0D%0A${message || 'Please get back to me with more details.'}%0D%0A%0D%0A`;
         emailBody += `Thanks,%0D%0A${name}`;
         
-        // Open email client (will use the placeholder email from the HTML)
+        // Get email from contact method
         const emailLink = document.querySelector('.contact-method[href^="mailto"]');
         const emailAddress = emailLink ? emailLink.getAttribute('href').replace('mailto:', '') : '[INSERT_EMAIL]';
         
         if (emailAddress === '[INSERT_EMAIL]') {
-            alert('Please update the email address in the contact section first! Look for [INSERT_EMAIL] in the HTML.');
+            alert('Please update the email address in the contact section first. Look for [INSERT_EMAIL] in the HTML.');
             return;
         }
         
@@ -157,21 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
-});
-
-// ===== Work Item Hover Enhancement =====
-document.addEventListener('DOMContentLoaded', function() {
-    const workItems = document.querySelectorAll('.work-item');
-    
-    workItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.02)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
 });
 
 // ===== Active Navigation Link =====
