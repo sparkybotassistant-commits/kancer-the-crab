@@ -1,6 +1,8 @@
-// ===== Hero Slideshow =====
+// ===== HERO SLIDESHOW =====
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.hero-slideshow .slide');
+    if (slides.length === 0) return;
+    
     let currentSlide = 0;
     
     function nextSlide() {
@@ -9,73 +11,37 @@ document.addEventListener('DOMContentLoaded', function() {
         slides[currentSlide].classList.add('active');
     }
     
-    // Change slide every 5 seconds
     setInterval(nextSlide, 5000);
 });
 
-// ===== Mobile Menu Toggle =====
+// ===== MOBILE MENU =====
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const body = document.body;
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn = document.querySelector('.mobile-menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
     
-    // Create mobile menu
-    const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'mobile-menu';
-    mobileMenu.innerHTML = `
-        <button class="mobile-menu-close" aria-label="Close menu">×</button>
-        <a href="#services" class="mobile-nav-link">Services</a>
-        <a href="#work" class="mobile-nav-link">Work</a>
-        <a href="#process" class="mobile-nav-link">Process</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
-    `;
-    body.appendChild(mobileMenu);
-    
-    // Toggle menu
-    menuToggle.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
-        body.style.overflow = 'hidden';
-    });
-    
-    // Close menu
-    const closeBtn = mobileMenu.querySelector('.mobile-menu-close');
-    closeBtn.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-        body.style.overflow = '';
-    });
-    
-    // Close on link click
-    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            body.style.overflow = '';
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-    });
-    
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            body.style.overflow = '';
-        }
-    });
-});
-
-// ===== Header Scroll Effect =====
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
         
-        if (currentScroll > 100) {
-            header.style.borderColor = 'rgba(196, 18, 48, 0.3)';
-        } else {
-            header.style.borderColor = 'var(--border)';
-        }
-    }, { passive: true });
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
 });
 
-// ===== Scroll Animations (Snappy) =====
+// ===== SCROLL ANIMATIONS =====
 document.addEventListener('DOMContentLoaded', function() {
     const observerOptions = {
         root: null,
@@ -92,104 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe section containers
-    const sections = document.querySelectorAll('section > .container');
-    sections.forEach(section => {
-        section.classList.add('fade-in');
-        observer.observe(section);
-    });
-    
-    // Observe cards
-    const cards = document.querySelectorAll('.service-card, .trust-item, .step');
-    cards.forEach((card) => {
-        card.classList.add('fade-in');
-        observer.observe(card);
-    });
-    
-    // Observe work links
-    const workLinks = document.querySelectorAll('.work-link');
-    workLinks.forEach((link, index) => {
-        link.style.opacity = '0';
-        link.style.transform = 'translateY(20px)';
-        link.style.transition = `opacity 0.4s ease ${index * 0.1}s, transform 0.4s ease ${index * 0.1}s`;
-        
-        const linkObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    linkObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        linkObserver.observe(link);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
     });
 });
 
-// ===== Contact Form =====
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contactForm');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const business = document.getElementById('business').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        // Build email body
-        let emailBody = `Hi Michael,%0D%0A%0D%0A`;
-        emailBody += `I'm interested in your ${service} services.%0D%0A%0D%0A`;
-        if (business) {
-            emailBody += `Business: ${business}%0D%0A`;
-        }
-        emailBody += `%0D%0A${message || 'Please get back to me with more details.'}%0D%0A%0D%0A`;
-        emailBody += `Thanks,%0D%0A${name}`;
-        
-        // Get email from contact method
-        const emailLink = document.querySelector('.contact-method[href^="mailto"]');
-        const emailAddress = emailLink ? emailLink.getAttribute('href').replace('mailto:', '') : '[INSERT_EMAIL]';
-        
-        if (emailAddress === '[INSERT_EMAIL]') {
-            alert('Please update the email address in the contact section first. Look for [INSERT_EMAIL] in the HTML.');
-            return;
-        }
-        
-        window.location.href = `mailto:${emailAddress}?subject=Design Project Inquiry from ${name}&body=${emailBody}`;
-    });
-});
-
-// ===== Smooth Scroll for Anchor Links =====
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
-
-// ===== Current Year in Footer =====
-document.addEventListener('DOMContentLoaded', function() {
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-});
-
-// ===== Active Navigation Link =====
+// ===== ACTIVE NAV LINK =====
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -215,4 +89,102 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     sections.forEach(section => observer.observe(section));
+});
+
+// ===== SMOOTH SCROLL =====
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = document.getElementById('header').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// ===== FORM HANDLING =====
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const action = form.getAttribute('action');
+            
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            fetch(action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Fallback: open mailto
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                const subject = `Design Project Inquiry from ${name}`;
+                const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AService: ${service}%0D%0A%0D%0A${message}`;
+                
+                window.location.href = `mailto:hello@kancerdesign.com?subject=${subject}&body=${body}`;
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
+});
+
+// ===== CURRENT YEAR =====
+document.addEventListener('DOMContentLoaded', function() {
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+});
+
+// ===== HEADER SCROLL EFFECT =====
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            header.style.background = 'rgba(10, 10, 15, 0.95)';
+        } else {
+            header.style.background = 'rgba(10, 10, 15, 0.85)';
+        }
+        
+        lastScroll = currentScroll;
+    }, { passive: true });
 });

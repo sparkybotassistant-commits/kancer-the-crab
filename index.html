@@ -6,110 +6,107 @@
     <title>Kancer Design Consulting — Freelance Graphic Designer in Cyprus</title>
     <meta name="description" content="Dramatically visualizing emotions and brands. Freelance graphic design services in Cyprus — logos, menus, print design, social media, and signage.">
     <meta name="keywords" content="graphic designer Cyprus, logo design Limassol, menu design Cyprus, freelance designer, branding, print design">
-    <meta property="og:title" content="Kancer Design Consulting — Freelance Graphic Designer in Cyprus">
-    <meta property="og:description" content="Dramatically visualizing emotions and brands. Professional design services for businesses in Cyprus.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Kancer Design Consulting — Graphic Designer, Cyprus">
+    <meta property="og:description" content="Dramatically visualizing emotions and brands. Branding, logos, menus, print design and more for businesses in Cyprus.">
+    <meta property="og:image" content="https://sparkybotassistant-commits.github.io/kancer-the-crab/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://kancerdesignconsulting.com">
+    <meta property="og:url" content="https://sparkybotassistant-commits.github.io/kancer-the-crab/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kancer Design Consulting — Graphic Designer, Cyprus">
+    <meta name="twitter:description" content="Dramatically visualizing emotions and brands. Branding, logos, menus, print and more.">
+    <meta name="twitter:image" content="https://sparkybotassistant-commits.github.io/kancer-the-crab/og-image.jpg">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80' fill='%23c41230'>CRAB</text></svg>">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" type="image/png" href="favicon.png">
 </head>
 <body>
-    <!-- Grain Overlay -->
+    <!-- Grain Texture Overlay -->
     <div class="grain-overlay"></div>
 
-    <!-- Sticky Header -->
-    <header class="header">
+    <!-- Sticky Navigation -->
+    <header class="header" id="header">
         <nav class="nav container">
-            <div class="logo">
-                <span class="logo-icon">K</span>
+            <a href="#home" class="logo">
+                <span class="logo-mark">K</span>
                 <span class="logo-text">KANCER</span>
-            </div>
+            </a>
             <div class="nav-links">
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#process" class="nav-link">Process</a>
+                <a href="#services" class="nav-link" data-section="services">Services</a>
+                <a href="#work" class="nav-link" data-section="work">Work</a>
+                <a href="#process" class="nav-link" data-section="process">Process</a>
                 <a href="#contact" class="btn btn-small">Let's Talk</a>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" aria-label="Close">×</button>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#work" class="mobile-nav-link">Work</a>
+        <a href="#process" class="mobile-nav-link">Process</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Hero Background Slideshow - ACTUAL KANCER WORK -->
+        <!-- Background Slideshow -->
         <div class="hero-slideshow">
-            <div class="slide active" style="background-image: url('images/hero-1.jpg');"></div>
-            <div class="slide" style="background-image: url('images/hero-2.png');"></div>
-            <div class="slide" style="background-image: url('images/hero-3.png');"></div>
-            <div class="slide" style="background-image: url('images/hero-4.png');"></div>
-            <div class="slide" style="background-image: url('images/hero-5.png');"></div>
-            <div class="hero-overlay"></div>
-        </div>
-        
-        <!-- Work Showcase Strip - ACTUAL KANCER WORK -->
-        <div class="work-strip">
-            <div class="work-strip-item">
-                <img src="images/hero-1.jpg" alt="Souk Eyes - Kancer The Crab artwork">
-            </div>
-            <div class="work-strip-item">
-                <img src="images/hero-2.png" alt="Akephalos Print - Kancer The Crab artwork">
-            </div>
-            <div class="work-strip-item">
-                <img src="images/hero-3.png" alt="The Green Knight - Kancer The Crab artwork">
-            </div>
-            <div class="work-strip-item">
-                <img src="images/hero-4.png" alt="INSTA Series - Kancer The Crab artwork">
-            </div>
-            <div class="work-strip-item">
-                <img src="images/strip-1.jpg" alt="Essentials Weapon Assembly Kit - Graphic Pack">
-            </div>
-            <div class="work-strip-item">
-                <img src="images/strip-2.jpg" alt="El-Chapo Font - Typography Design">
-            </div>
+            <div class="slide active" style="background-image: url('images/hero-1.jpg')"></div>
+            <div class="slide" style="background-image: url('images/hero-2.png')"></div>
+            <div class="slide" style="background-image: url('images/hero-3.png')"></div>
+            <div class="slide" style="background-image: url('images/hero-4.png')"></div>
+            <div class="slide" style="background-image: url('images/hero-5.png')"></div>
+            <div class="hero-vignette"></div>
         </div>
 
         <!-- Scrolling Marquee -->
-        <div class="marquee-container">
+        <div class="marquee-wrapper">
             <div class="marquee">
-                <span>BRANDING</span>
-                <span class="marquee-dot">/</span>
-                <span>IDENTITY</span>
-                <span class="marquee-dot">/</span>
-                <span>PRINT</span>
-                <span class="marquee-dot">/</span>
-                <span>DIGITAL</span>
-                <span class="marquee-dot">/</span>
-                <span>ILLUSTRATION</span>
-                <span class="marquee-dot">/</span>
-                <span>BRANDING</span>
-                <span class="marquee-dot">/</span>
-                <span>IDENTITY</span>
-                <span class="marquee-dot">/</span>
-                <span>PRINT</span>
-                <span class="marquee-dot">/</span>
-                <span>DIGITAL</span>
-                <span class="marquee-dot">/</span>
-                <span>ILLUSTRATION</span>
-                <span class="marquee-dot">/</span>
+                <div class="marquee-content">
+                    <span>BRANDING</span><span class="dot">/</span>
+                    <span>IDENTITY</span><span class="dot">/</span>
+                    <span>PRINT</span><span class="dot">/</span>
+                    <span>DIGITAL</span><span class="dot">/</span>
+                    <span>ILLUSTRATION</span><span class="dot">/</span>
+                    <span>BRANDING</span><span class="dot">/</span>
+                    <span>IDENTITY</span><span class="dot">/</span>
+                    <span>PRINT</span><span class="dot">/</span>
+                    <span>DIGITAL</span><span class="dot">/</span>
+                    <span>ILLUSTRATION</span><span class="dot">/</span>
+                </div>
             </div>
         </div>
 
+        <!-- Hero Content -->
         <div class="container">
             <div class="hero-content">
-                <div class="corner-bracket corner-tl"></div>
-                <div class="corner-bracket corner-tr"></div>
-                <div class="corner-bracket corner-bl"></div>
-                <div class="corner-bracket corner-br"></div>
+                <div class="corner-frame">
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+                </div>
                 
-                <div class="hero-badge">
-                    <span class="badge-line"></span>
-                    Freelance Design
+                <div class="hero-eyebrow">
+                    <span class="line"></span>
+                    <span>Freelance Design — Cyprus</span>
                 </div>
                 
                 <h1 class="hero-title">
@@ -118,16 +115,27 @@
                 </h1>
                 
                 <p class="hero-tagline">Dramatically visualizing emotions and brands</p>
-                <p class="hero-location">Operating as Kancer The Crab — Cyprus</p>
+                <p class="hero-alias">Operating as Kancer The Crab</p>
                 
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-                    <a href="#work" class="btn btn-secondary">View Work</a>
+                    <a href="#contact" class="btn btn-primary btn-large">Let's Work Together</a>
+                    <a href="#work" class="btn btn-secondary btn-large">View Selected Work</a>
                 </div>
             </div>
         </div>
-        
-        <div class="hero-scroll">
+
+        <!-- Work Preview Strip -->
+        <div class="work-strip">
+            <div class="work-strip-item"><img src="images/hero-1.jpg" alt="Souk Eyes artwork"></div>
+            <div class="work-strip-item"><img src="images/hero-2.png" alt="Akephalos Print artwork"></div>
+            <div class="work-strip-item"><img src="images/hero-3.png" alt="The Green Knight artwork"></div>
+            <div class="work-strip-item"><img src="images/hero-4.png" alt="INSTA artwork"></div>
+            <div class="work-strip-item"><img src="images/strip-1.jpg" alt="Weapon Assembly Kit"></div>
+            <div class="work-strip-item"><img src="images/strip-2.jpg" alt="El-Chapo Font"></div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
@@ -136,60 +144,68 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
+            <header class="section-header animate-on-scroll">
                 <span class="section-number">01</span>
                 <h2 class="section-title">What I Do</h2>
-            </div>
+            </header>
             
-            <p class="services-intro">
-                I help businesses look as good as they deserve. From menus to logos to full brand identities — I design things that make your customers pay attention.
-            </p>
+            <p class="section-intro animate-on-scroll">I help businesses look as good as they deserve. From menus to logos to full brand identities — I design things that make your customers pay attention.</p>
             
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-br"></div>
-                    <h3 class="service-title">Brand Identity & Logo Design</h3>
-                    <p class="service-desc">A logo you're proud of, in every format you need. From initial concepts to final files ready for print, web, and signage.</p>
-                    <span class="service-tag">Logos / Branding</span>
-                </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    <span class="card-number">01</span>
+                    <h3 class="card-title">Brand Identity & Logo Design</h3>
+                    <p class="card-desc">A logo you're proud of, in every format you need. From initial concepts to final files ready for print, web, and signage.</p>
+                    <span class="card-tag">Logos / Branding</span>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-br"></div>
-                    <h3 class="service-title">Menu Design</h3>
-                    <p class="service-desc">Clean, scannable menus that make your food look as good as it tastes. Print-ready, delivered to your door if you want.</p>
-                    <span class="service-tag">Restaurants / Cafes</span>
-                </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    <span class="card-number">02</span>
+                    <h3 class="card-title">Menu Design</h3>
+                    <p class="card-desc">Clean, scannable menus that make your food look as good as it tastes. Print-ready, delivered to your door if you want.</p>
+                    <span class="card-tag">Restaurants / Cafes</span>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-br"></div>
-                    <h3 class="service-title">Print Design</h3>
-                    <p class="service-desc">Business cards, flyers, posters, banners — designed and print-coordinated so you don't have to deal with the printer yourself.</p>
-                    <span class="service-tag">Business Cards / Flyers</span>
-                </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    <span class="card-number">03</span>
+                    <h3 class="card-title">Print Design</h3>
+                    <p class="card-desc">Business cards, flyers, posters, banners — designed and print-coordinated so you don't have to deal with the printer yourself.</p>
+                    <span class="card-tag">Business Cards / Flyers</span>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-br"></div>
-                    <h3 class="service-title">Social Media Design</h3>
-                    <p class="service-desc">Branded templates for Instagram and Facebook that keep your feed consistent and professional without hiring an agency.</p>
-                    <span class="service-tag">Templates / Posts</span>
-                </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    <span class="card-number">04</span>
+                    <h3 class="card-title">Social Media Design</h3>
+                    <p class="card-desc">Branded templates for Instagram and Facebook that keep your feed consistent and professional without hiring an agency.</p>
+                    <span class="card-tag">Templates / Posts</span>
+                </article>
                 
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-br"></div>
-                    <h3 class="service-title">Signage & Environmental</h3>
-                    <p class="service-desc">Storefront signage, window graphics, and interior displays that pull people in from the street.</p>
-                    <span class="service-tag">Signage / Displays</span>
-                </div>
+                <article class="service-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                    <span class="card-number">05</span>
+                    <h3 class="card-title">Signage & Environmental</h3>
+                    <p class="card-desc">Storefront signage, window graphics, and interior displays that pull people in from the street.</p>
+                    <span class="card-tag">Signage / Displays</span>
+                </article>
             </div>
         </div>
     </section>
@@ -197,94 +213,150 @@
     <!-- Work / Portfolio Section -->
     <section class="work" id="work">
         <div class="container">
-            <div class="section-header">
+            <header class="section-header animate-on-scroll">
                 <span class="section-number">02</span>
                 <h2 class="section-title">Selected Work</h2>
-            </div>
+            </header>
             
-            <div class="work-links">
-                <a href="https://www.instagram.com/kancerthecrab" target="_blank" class="work-link">
-                    <span class="link-number">01</span>
-                    <span class="link-name">Instagram</span>
-                    <span class="link-url">@kancerthecrab</span>
-                </a>
-                <a href="https://kancerthecrab.gumroad.com" target="_blank" class="work-link">
-                    <span class="link-number">02</span>
-                    <span class="link-name">Gumroad Store</span>
-                    <span class="link-url">kancerthecrab.gumroad.com</span>
-                </a>
-                <a href="https://kancerthecrabshop.bigcartel.com" target="_blank" class="work-link">
-                    <span class="link-number">03</span>
-                    <span class="link-name">Print Shop</span>
-                    <span class="link-url">Big Cartel</span>
-                </a>
-                <a href="https://www.trove.cc/en-us/pages/artist/kancer-the-crab" target="_blank" class="work-link">
-                    <span class="link-number">04</span>
-                    <span class="link-name">TROVE Collab</span>
-                    <span class="link-url">Wallet Design</span>
-                </a>
-            </div>
-            
-            <!-- Instagram Embed -->
-            <div class="instagram-section">
-                <div class="instagram-header">
-                    <h3>Latest Work on Instagram</h3>
-                    <a href="https://www.instagram.com/kancerthecrab" target="_blank" class="btn btn-small">Follow</a>
+            <!-- Visual Portfolio Grid -->
+            <div class="portfolio-grid">
+                <div class="portfolio-item large animate-on-scroll">
+                    <img src="images/hero-1.jpg" alt="Souk Eyes artwork">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Print Design</span>
+                        <h3 class="portfolio-title">Souk Eyes</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                 </div>
-                <div class="instagram-embed">
-                    <iframe src="https://www.instagram.com/kancerthecrab/embed/" 
-                            frameborder="0" 
-                            scrolling="no" 
-                            allowtransparency="true"
-                            loading="lazy">
-                    </iframe>
+                
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="images/hero-2.png" alt="Akephalos artwork">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Digital Art</span>
+                        <h3 class="portfolio-title">Akephalos</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="images/hero-3.png" alt="The Green Knight artwork">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Illustration</span>
+                        <h3 class="portfolio-title">The Green Knight</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="images/hero-4.png" alt="INSTA Series artwork">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Series</span>
+                        <h3 class="portfolio-title">INSTA Collection</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item animate-on-scroll">
+                    <img src="images/hero-5.png" alt="The Spirit artwork">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Print Design</span>
+                        <h3 class="portfolio-title">The Spirit</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item wide animate-on-scroll">
+                    <img src="images/strip-1.jpg" alt="Weapon Assembly Kit">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Graphic Pack</span>
+                        <h3 class="portfolio-title">Essentials Weapon Kit</h3>
+                    </div>
+                    <div class="portfolio-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                 </div>
             </div>
             
-            <div class="work-watermark">KANCER</div>
+            <!-- External Links -->
+            <div class="external-links animate-on-scroll">
+                <span class="links-label">Find more on:</span>
+                <div class="links-row">
+                    <a href="https://www.instagram.com/kancerthecrab" target="_blank" class="link-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://kancerthecrab.gumroad.com" target="_blank" class="link-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        Gumroad
+                    </a>
+                    <a href="https://kancerthecrabshop.bigcartel.com" target="_blank" class="link-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        Big Cartel
+                    </a>
+                    <a href="https://www.trove.cc/en-us/pages/artist/kancer-the-crab" target="_blank" class="link-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        TROVE
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Process Section -->
     <section class="process" id="process">
         <div class="container">
-            <div class="section-header">
+            <header class="section-header animate-on-scroll">
                 <span class="section-number">03</span>
                 <h2 class="section-title">How It Works</h2>
-            </div>
+            </header>
             
-            <p class="process-subtitle">Dead simple. No surprises. Just good design delivered fast.</p>
+            <p class="section-intro animate-on-scroll">Dead simple. No surprises. Just good design delivered fast.</p>
             
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
+            <div class="process-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="process-step animate-on-scroll">
+                    <div class="step-marker">1</div>
                     <div class="step-content">
                         <h3>We Talk</h3>
                         <p>Quick chat about what you need. 15–20 minutes, no commitment.</p>
                     </div>
-                    <div class="step-line"></div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">2</div>
+                <div class="process-step animate-on-scroll">
+                    <div class="step-marker">2</div>
                     <div class="step-content">
                         <h3>I Show You Something</h3>
                         <p>I'll put together a preview using your actual brand so you can see the quality before you pay.</p>
                     </div>
-                    <div class="step-line"></div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">3</div>
+                <div class="process-step animate-on-scroll">
+                    <div class="step-marker">3</div>
                     <div class="step-content">
                         <h3>We Lock It In</h3>
                         <p>50% deposit, then I get to work. First draft in 3–5 days. 2 rounds of revisions included.</p>
                     </div>
-                    <div class="step-line"></div>
                 </div>
                 
-                <div class="step">
-                    <div class="step-number">4</div>
+                <div class="process-step animate-on-scroll">
+                    <div class="step-marker">4</div>
                     <div class="step-content">
                         <h3>You Get Everything</h3>
                         <p>Final files in every format. If you want, I'll handle printing and delivery too.</p>
@@ -297,55 +369,55 @@
     <!-- Trust Section -->
     <section class="trust" id="trust">
         <div class="container">
-            <div class="section-header">
+            <header class="section-header animate-on-scroll">
                 <span class="section-number">04</span>
                 <h2 class="section-title">Why Work With Me</h2>
-            </div>
+            </header>
             
             <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="corner-bracket corner-tl"></div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                     <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                     </div>
                     <h3>Local</h3>
                     <p>I'm based in Cyprus. I can visit your business, understand your customers, and deliver in person.</p>
                 </div>
                 
-                <div class="trust-item">
-                    <div class="corner-bracket corner-tl"></div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                     <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                        </svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                     </div>
                     <h3>Fast</h3>
                     <p>Most projects done in under a week. No agency timelines, no waiting months.</p>
                 </div>
                 
-                <div class="trust-item">
-                    <div class="corner-bracket corner-tl"></div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                     <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M12 6v6l4 2"/>
-                        </svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                     </div>
                     <h3>Full-Service</h3>
                     <p>I don't just hand you files. I can handle printing, laminating, and delivery so you don't have to think about it.</p>
                 </div>
                 
-                <div class="trust-item">
-                    <div class="corner-bracket corner-tl"></div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="card-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                     <div class="trust-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <line x1="12" y1="1" x2="12" y2="23"/>
-                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                        </svg>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
                     <h3>Fair Pricing</h3>
                     <p>You get agency-quality design at independent pricing. No overhead, no middlemen.</p>
@@ -358,63 +430,62 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-wrapper">
-                <div class="contact-content">
-                    <div class="section-header">
+                <div class="contact-info">
+                    <header class="section-header animate-on-scroll">
                         <span class="section-number">05</span>
-                        <h2 class="section-title">Ready to upgrade your brand?</h2>
-                    </div>
+                        <h2 class="section-title">Ready to upgrade<br>your brand?</h2>
+                    </header>
                     
-                    <p class="contact-subtitle">Tell me what you need and I'll get back to you within 24 hours. No pressure, no BS.</p>
+                    <p class="contact-intro animate-on-scroll">Tell me what you need and I'll get back to you within 24 hours. No pressure, no BS.</p>
                     
-                    <div class="contact-methods">
-                        <a href="https://wa.me/[INSERT_WHATSAPP_NUMBER]" class="contact-method primary">
-                            <div class="method-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                                </svg>
+                    <div class="contact-methods animate-on-scroll">
+                        <a href="https://wa.me/357999999999" class="contact-method primary" id="whatsappLink">
+                            <div class="method-icon whatsapp">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             </div>
-                            <div class="method-info">
+                            <div class="method-content">
                                 <span class="method-label">WhatsApp (Preferred)</span>
-                                <span class="method-value">Message me on WhatsApp</span>
+                                <span class="method-value" id="whatsappText">Message me on WhatsApp</span>
                             </div>
                         </a>
                         
-                        <a href="mailto:[INSERT_EMAIL]" class="contact-method">
+                        <a href="mailto:hello@kancerdesign.com" class="contact-method" id="emailLink">
                             <div class="method-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             </div>
-                            <div class="method-info">
+                            <div class="method-content">
                                 <span class="method-label">Email</span>
-                                <span class="method-value">[INSERT_EMAIL]</span>
+                                <span class="method-value" id="emailText">hello@kancerdesign.com</span>
                             </div>
                         </a>
                         
                         <a href="https://www.instagram.com/kancerthecrab" target="_blank" class="contact-method">
                             <div class="method-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                             </div>
-                            <div class="method-info">
+                            <div class="method-content">
                                 <span class="method-label">Instagram DM</span>
                                 <span class="method-value">@kancerthecrab</span>
                             </div>
                         </a>
                     </div>
+                    
+                    <!-- Hidden contact update helper -->
+                    <div class="contact-note">
+                        <small>Business owner in Cyprus? WhatsApp is the fastest way to reach me.</small>
+                    </div>
                 </div>
                 
-                <div class="contact-form-wrapper">
-                    <div class="corner-bracket corner-tl"></div>
-                    <div class="corner-bracket corner-tr"></div>
-                    <div class="corner-bracket corner-bl"></div>
-                    <div class="corner-bracket corner-br"></div>
+                <!-- Contact Form with Formspree -->
+                <div class="contact-form-wrapper animate-on-scroll">
+                    <div class="form-frame">
+                        <div class="corner corner-tl"></div>
+                        <div class="corner corner-tr"></div>
+                        <div class="corner corner-bl"></div>
+                        <div class="corner corner-br"></div>
+                    </div>
                     
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/michael@kancerdesign.com" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required placeholder="e.g. Maria">
@@ -443,8 +514,15 @@
                             <label for="message">Tell me more</label>
                             <textarea id="message" name="message" rows="4" placeholder="Brief description of what you're looking for..."></textarea>
                         </div>
+                        <input type="hidden" name="_subject" value="New Design Inquiry - Kancer Design Consulting">
                         <button type="submit" class="btn btn-primary btn-full">Send Message</button>
                     </form>
+                    
+                    <div class="form-success" id="formSuccess" style="display: none;">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                        <h3>Message Sent!</h3>
+                        <p>I'll get back to you within 24 hours.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,15 +538,20 @@
                 </div>
                 <div class="footer-links">
                     <a href="https://www.instagram.com/kancerthecrab" target="_blank">Instagram</a>
-                    <a href="mailto:[INSERT_EMAIL]">Email</a>
-                    <a href="https://wa.me/[INSERT_WHATSAPP_NUMBER]">WhatsApp</a>
+                    <a href="mailto:hello@kancerdesign.com">Email</a>
+                    <a href="https://wa.me/357999999999">WhatsApp</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; Kancer Design Consulting <span id="currentYear">2026</span>. All rights reserved.</p>
+                <p>&copy; Kancer Design Consulting <span id="currentYear">2024</span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button (Mobile) -->
+    <a href="https://wa.me/357999999999" class="whatsapp-float" id="whatsappFloat" aria-label="Message on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
 
     <script src="script.js"></script>
 </body>
