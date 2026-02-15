@@ -90,13 +90,13 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <!-- Background Slideshow -->
+        <!-- Background Slideshow - Only first image loads initially, rest lazy loaded -->
         <div class="hero-slideshow">
             <div class="slide active" style="background-image: url('images/hero-1.jpg')"></div>
-            <div class="slide" style="background-image: url('images/hero-2.png')"></div>
-            <div class="slide" style="background-image: url('images/hero-3.png')"></div>
-            <div class="slide" style="background-image: url('images/hero-4.png')"></div>
-            <div class="slide" style="background-image: url('images/hero-5.png')"></div>
+            <div class="slide" data-bg="images/hero-2.png"></div>
+            <div class="slide" data-bg="images/hero-3.png"></div>
+            <div class="slide" data-bg="images/hero-4.png"></div>
+            <div class="slide" data-bg="images/hero-5.png"></div>
             <div class="hero-vignette"></div>
         </div>
 

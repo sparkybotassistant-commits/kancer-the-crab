@@ -10,8 +10,8 @@
     --accent-soft: rgba(255, 26, 26, 0.15);
     
     --text-primary: #ffffff;
-    --text-secondary: #a0a0a8;
-    --text-muted: #909098;
+    --text-secondary: #b0b0b8;
+    --text-muted: #a0a0a8;
     
     --border: rgba(255, 255, 255, 0.06);
     --border-light: rgba(255, 255, 255, 0.12);
@@ -390,6 +390,7 @@ section {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     filter: grayscale(30%) contrast(1.1);
+    background-color: var(--bg-primary);
 }
 
 .hero-slideshow .slide.active {
@@ -442,8 +443,8 @@ section {
     font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: var(--text-muted);
-    opacity: 0.5;
+    color: var(--text-secondary);
+    opacity: 0.6;
     padding: 0 40px;
     white-space: nowrap;
 }

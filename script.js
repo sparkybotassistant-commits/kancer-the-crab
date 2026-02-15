@@ -1,16 +1,40 @@
-// ===== HERO SLIDESHOW =====
+// ===== HERO SLIDESHOW with Lazy Loading =====
 document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.hero-slideshow .slide');
     if (slides.length === 0) return;
-    
+
     let currentSlide = 0;
-    
+    const loadedSlides = new Set([0]); // First slide is preloaded
+
+    // Lazy load slide background image
+    function loadSlideBackground(index) {
+        if (loadedSlides.has(index)) return;
+        const slide = slides[index];
+        const bgUrl = slide.getAttribute('data-bg');
+        if (bgUrl) {
+            // Preload image
+            const img = new Image();
+            img.onload = () => {
+                slide.style.backgroundImage = `url('${bgUrl}')`;
+                loadedSlides.add(index);
+            };
+            img.src = bgUrl;
+        }
+    }
+
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
+
+        // Preload next 2 slides for smooth transitions
+        loadSlideBackground((currentSlide + 1) % slides.length);
+        loadSlideBackground((currentSlide + 2) % slides.length);
     }
-    
+
+    // Preload second slide after initial page load
+    setTimeout(() => loadSlideBackground(1), 2000);
+
     setInterval(nextSlide, 5000);
 });
 
