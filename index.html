@@ -20,13 +20,38 @@
     <meta name="twitter:description" content="Dramatically visualizing emotions and brands. Branding, logos, menus, print and more.">
     <meta name="twitter:image" content="https://sparkybotassistant-commits.github.io/kancer-the-crab/og-image.jpg">
     
-    <!-- Fonts -->
+    <!-- Preload Critical Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Preload Critical CSS -->
+    <style>
+        /* Critical CSS - Above the fold */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;font-size:16px}
+        body{font-family:'Inter',sans-serif;background:#000;color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+        .grain-overlay{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+        .header{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(0,0,0,.85);border-bottom:1px solid rgba(255,255,255,.06)}
+        .nav{display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 24px;max-width:1200px;margin:0 auto}
+        .logo-mark{width:44px;height:44px;border:2px solid #ff1a1a;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:.9rem;font-weight:400;color:#ff1a1a;letter-spacing:-.02em;text-transform:uppercase}
+        .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:160px 0 200px;overflow:hidden}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.85) 0%,rgba(0,0,0,.5) 40%,rgba(0,0,0,.2) 70%);z-index:1;pointer-events:none}
+        .hero-content{position:relative;text-align:center;max-width:1200px;margin:0 auto;padding:60px 24px;z-index:2}
+        .hero-title{margin-bottom:48px}
+        .hero-title .line{display:block;font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,15vw,12rem);font-weight:400;letter-spacing:.02em;line-height:.9;text-shadow:0 4px 60px rgba(0,0,0,.95),0 0 100px rgba(0,0,0,.8),0 0 160px rgba(0,0,0,.6)}
+        .hero-title .accent{color:#ff1a1a;display:block}
+        .hero-cta{display:flex;flex-direction:column;gap:16px;align-items:center}
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:18px 36px;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;cursor:pointer;border:none;text-decoration:none;transition:all .2s cubic-bezier(0.4,0,0.2,1)}
+        .btn-primary{background:#ff1a1a;color:white;position:relative;overflow:hidden}
+        .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.12)}
+        @media(min-width:640px){.hero-cta{flex-direction:row;justify-content:center}}
+    </style>
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Non-critical CSS loaded async -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -105,12 +130,12 @@
 
         <!-- Work Preview Strip -->
         <div class="work-strip">
-            <div class="work-strip-item"><img src="images/hero-1.jpg" alt="Souk Eyes artwork"></div>
-            <div class="work-strip-item"><img src="images/hero-2.png" alt="Akephalos Print artwork"></div>
-            <div class="work-strip-item"><img src="images/hero-3.png" alt="The Green Knight artwork"></div>
-            <div class="work-strip-item"><img src="images/hero-4.png" alt="INSTA artwork"></div>
-            <div class="work-strip-item"><img src="images/strip-1.jpg" alt="Weapon Assembly Kit"></div>
-            <div class="work-strip-item"><img src="images/strip-2.jpg" alt="El-Chapo Font"></div>
+            <div class="work-strip-item"><img src="images/hero-1.jpg" alt="Souk Eyes artwork" loading="lazy" decoding="async"></div>
+            <div class="work-strip-item"><img src="images/hero-2.png" alt="Akephalos Print artwork" loading="lazy" decoding="async"></div>
+            <div class="work-strip-item"><img src="images/hero-3.png" alt="The Green Knight artwork" loading="lazy" decoding="async"></div>
+            <div class="work-strip-item"><img src="images/hero-4.png" alt="INSTA artwork" loading="lazy" decoding="async"></div>
+            <div class="work-strip-item"><img src="images/strip-1.jpg" alt="Weapon Assembly Kit" loading="lazy" decoding="async"></div>
+            <div class="work-strip-item"><img src="images/strip-2.jpg" alt="El-Chapo Font" loading="lazy" decoding="async"></div>
         </div>
 
         <!-- Scroll Indicator -->
@@ -218,7 +243,7 @@
             <!-- Visual Portfolio Grid -->
             <div class="portfolio-grid">
                 <div class="portfolio-item large animate-on-scroll">
-                    <img src="images/hero-1.jpg" alt="Souk Eyes artwork">
+                    <img src="images/hero-1.jpg" alt="Souk Eyes artwork" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Print Design</span>
                         <h3 class="portfolio-title">Souk Eyes</h3>
@@ -228,9 +253,9 @@
                         <div class="corner corner-br"></div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item animate-on-scroll">
-                    <img src="images/hero-2.png" alt="Akephalos artwork">
+                    <img src="images/hero-2.png" alt="Akephalos artwork" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Digital Art</span>
                         <h3 class="portfolio-title">Akephalos</h3>
@@ -240,9 +265,9 @@
                         <div class="corner corner-br"></div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item animate-on-scroll">
-                    <img src="images/hero-3.png" alt="The Green Knight artwork">
+                    <img src="images/hero-3.png" alt="The Green Knight artwork" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Illustration</span>
                         <h3 class="portfolio-title">The Green Knight</h3>
@@ -252,9 +277,9 @@
                         <div class="corner corner-br"></div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item animate-on-scroll">
-                    <img src="images/hero-4.png" alt="INSTA Series artwork">
+                    <img src="images/hero-4.png" alt="INSTA Series artwork" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Series</span>
                         <h3 class="portfolio-title">INSTA Collection</h3>
@@ -264,9 +289,9 @@
                         <div class="corner corner-br"></div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item animate-on-scroll">
-                    <img src="images/hero-5.png" alt="The Spirit artwork">
+                    <img src="images/hero-5.png" alt="The Spirit artwork" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Print Design</span>
                         <h3 class="portfolio-title">The Spirit</h3>
@@ -276,9 +301,9 @@
                         <div class="corner corner-br"></div>
                     </div>
                 </div>
-                
+
                 <div class="portfolio-item wide animate-on-scroll">
-                    <img src="images/strip-1.jpg" alt="Weapon Assembly Kit">
+                    <img src="images/strip-1.jpg" alt="Weapon Assembly Kit" loading="lazy" decoding="async">
                     <div class="portfolio-overlay">
                         <span class="portfolio-category">Graphic Pack</span>
                         <h3 class="portfolio-title">Essentials Weapon Kit</h3>

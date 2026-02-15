@@ -1,15 +1,14 @@
-const lighthouse = require('lighthouse');
+const lighthouse = require('lighthouse').default;
 const puppeteer = require('puppeteer');
+const chromeLauncher = require('chrome-launcher');
 
 (async () => {
-  const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  const chrome = await chromeLauncher.launch({
+    chromeFlags: ['--headless', '--no-sandbox', '--disable-setuid-sandbox']
   });
-  const port = new URL(browser.wsEndpoint()).port;
   
   const result = await lighthouse('https://sparkybotassistant-commits.github.io/kancer-the-crab/', {
-    port,
+    port: chrome.port,
     output: 'json',
     onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo']
   });
@@ -30,5 +29,5 @@ const puppeteer = require('puppeteer');
     }
   }
   
-  await browser.close();
+  await chrome.kill();
 })();
