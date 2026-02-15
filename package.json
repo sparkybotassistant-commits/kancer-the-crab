@@ -1,0 +1,26 @@
+{
+  "name": "kancer-the-crab",
+  "version": "1.0.0",
+  "description": "A bold, dark-themed single-page website for Kancer The Crab (Michael), a freelance graphic designer based in Cyprus.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sparkybotassistant-commits/kancer-the-crab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sparkybotassistant-commits/kancer-the-crab/issues"
+  },
+  "homepage": "https://github.com/sparkybotassistant-commits/kancer-the-crab#readme",
+  "dependencies": {
+    "@axe-core/puppeteer": "^4.11.1",
+    "cssstats": "^4.0.5",
+    "lighthouse": "^13.0.3",
+    "puppeteer": "^24.37.3"
+  }
+}
