@@ -323,10 +323,11 @@ a {
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
+    filter: saturate(0.8) contrast(1.1);
 }
 
 .hero-slideshow .slide.active {
-    opacity: 0.15;
+    opacity: 0.2;
 }
 
 .hero-overlay {
